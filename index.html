@@ -4,28 +4,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>Chamber</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
 	<link rel="stylesheet" href="css/game.css" />
 </head>
 <body>
 <div id="canvas" class="container">
-	<div id="messages"></div>
 
 	<div class="row">
-		<div id="tools" class="col-md-3">
+		<div id="messages" class="border-round"></div>
+	</div>
+	<div class="row">
+		<div id="tools" class="col-md-3 border-round">
 			<button id="who_am_i" class="btn btn-default a1">Who am I?</button>
 			<button id="am_i_alone" class="btn btn-default a2">Am I alone?</button>
 			<button id="its_dark_in_here" class="btn btn-default a3">I can't see anything!</button>
 			<button id="lighter" class="btn btn-warning a4 a5 a6">a Lighter!</button>
 		</div>
+		<div id="" class="col-md-5">
+		</div>
+		<div id="achievements" class="col-md-4 border-round">
+			<h5>Achievements</h5>
 
-		<div id="achievements" class="col-md-4">
-			Yet another column
+			<ul class="list-unstyled">
+				<li>Let there be light</li>
+			</ul>
 		</div>
 	</div>
 
@@ -38,7 +41,7 @@
 </div>
 
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/objects.js"></script>
 <script type="text/javascript" src="js/game.js"></script>
 </body>

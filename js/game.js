@@ -27,11 +27,18 @@ jQuery( document ).ready( function ( $ ) {
 				break;
 			case 'a6':
 				game_state.current_scene = 'a7';
+				earn_achievement( 'light' );
 				break;
 		}
 
 		update_canvas();
 	} );
+
+	var earn_achievement = function ( achievement ) {
+		game_state.achievements.push( achievements[achievement] );
+		update_game_message( 'You earned an achievement!' );
+		update_canvas();
+	}
 
 	/** Game Menu **/
 	$( '#save_game' ).on( 'click', function () {
@@ -39,22 +46,23 @@ jQuery( document ).ready( function ( $ ) {
 	} );
 
 	$( '#reset_game' ).on( 'click', function () {
-		var confirm_reset = confirm('Are you sure you want to reset the game? You will lose all your progress.');
+		var confirm_reset = confirm( 'Are you sure you want to reset the game? You will lose all your progress.' );
 
-		if (confirm_reset) {
+		if ( confirm_reset ) {
 			reset_game();
 		} else {
-			update_game_message('Game reset canceled.');
+			update_game_message( 'Game reset canceled.' );
 		}
 	} );
 
 	var update_game_message = function ( message ) {
-		$( '#game_message' ).animate( {opacity: 0}, function () {
+
+		$( '#game_message' ).text('').animate( {opacity: 0}, function () {
 			$( this ).text( message )
 				.animate( {opacity: 1}, function () {
 					$( this ).animate( {opacity: 0}, 3000 );
 				} )
-		} )
+		}, 0 )
 	};
 
 	/** Primary Game Functionality **/
@@ -66,7 +74,8 @@ jQuery( document ).ready( function ( $ ) {
 		if ( !localStorage['chamber_save'] ) {
 			game_state = {
 				'current_scene': 'a1',
-				'items'        : ['lighter']
+				'items'        : ['lighter'],
+				'achievements' : []
 			};
 		} else {
 			game_state = JSON.parse( atob( localStorage['chamber_save'] ) );
@@ -90,7 +99,15 @@ jQuery( document ).ready( function ( $ ) {
 	var update_canvas = function () {
 		var body = $( 'body' ),
 			canvas = $( '#canvas' ),
-			messages = $( '#messages' );
+			messages = $( '#messages' ),
+			achievements_list = $( '#achievements ul' );
+
+		achievements_list.find('li' ).remove();
+
+		for (var i = game_state.achievements.length - 1; i >= 0; i--) {
+			var list_item = jQuery('<li>' + game_state.achievements[i].label + '</li>');
+			achievements_list.append(list_item);
+		}
 
 		if ( messages.html() ) {
 			messages.fadeOut( 'slow', function () {

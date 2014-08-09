@@ -1,6 +1,7 @@
 var game_state = {
 	'current_scene': 'a1',
-	'items'        : ['lighter']
+	'items'        : ['lighter'],
+	'achievements' : []
 };
 
 var scenes = {
@@ -69,5 +70,14 @@ var scenes = {
 		'mutant_mouse': {
 			'hp'   : 40,
 			'label': 'Mutant Mouse'
+		}
+	},
+
+	achievements = {
+		'light': {
+			'label': 'Let there be light'
+		},
+		'dig_it': {
+			'label': 'Can you dig it?'
 		}
 	};
