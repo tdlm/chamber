@@ -1,0 +1,69 @@
+/* @import 'reset.css'; */
+
+html, body {
+	margin:  0;
+	padding: 0;
+}
+
+body.dark {
+	background: #000;
+	color:      #fff;
+}
+
+body.dim {
+	background: #555;
+	color:      #000;
+}
+
+body.dark #canvas {
+}
+
+#canvas {
+	margin:     20px;
+	display:    block;
+	min-height: 600px;
+}
+
+#canvas #messages {
+}
+
+#canvas #tools {
+	padding-top: 25px;
+}
+
+body button {
+	display: none !important;
+}
+
+body.a1 button.a1, body.a2 button.a2 {
+	display: inline-block !important;
+}
+
+body.a3 button.a3 {
+	display: inline-block !important;
+}
+
+body.a4 button.a4 {
+	display: inline-block !important;
+}
+
+body.a5 button.a5 {
+	display: inline-block !important;
+}
+
+body.a6 button.a6 {
+	display: inline-block !important;
+}
+
+body.a7 button.a7 {
+	display: inline-block !important;
+}
+
+#game_menu {
+	padding: 20px;
+	display: block;
+}
+
+#game_menu button#save_game, #game_menu button#reset_game {
+	display: inline-block !important;
+}
