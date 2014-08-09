@@ -20,6 +20,10 @@ All that mining is hard work! Why not put your robots to work for you? That usel
 
 While digging, there is a chance you'll run into trouble. This is a cave after all, and who knows what lurks in the darkness? Of course, you'll arm yourself against any potential trouble, or risk death! Careful,
 
+## Treasure Chests
+
+Along the way, you will encounter treasure chests that contain items to help you on your path!
+
 ## Tools
 
 - Rock Hammer (I/II/III)
